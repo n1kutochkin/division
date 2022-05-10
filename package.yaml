@@ -1,0 +1,36 @@
+name: division-template
+version: '0.0.0'
+github: "githubuser/division-template"
+license: MIT
+author: "Author name here"
+maintainer: "Author name here"
+# synopsis: A new Haskeleton package.
+# description: division-template is a new Haskeleton package.
+# category: Other
+
+extra-source-files:
+- LICENSE.md
+- package.yaml
+- README.md
+- stack.yaml
+
+ghc-options: -Wall
+
+library:
+  dependencies:
+  - base
+  source-dirs: library
+
+tests:
+  division-template-test-suite:
+    source-dirs: test-suite
+    main: Main.hs
+    dependencies:
+    - base
+    - division-template
+    - tasty
+    - tasty-quickcheck
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
